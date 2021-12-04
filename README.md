@@ -1,9 +1,3 @@
-# Project Part 1 - Pippin Assembler
-
-## Introduction
-
-The final project will be a team project that will be divided into two parts, both dealing with Pippin. The first part (this part) consists of converting Pippin man-readable assembler code (.pasm files) into "binary" machine readable Pippin object code (.pexe files).
-
 In order to make this all work, there have been several updates to the Pippin code since we last worked on it on lab 08. The highlights are as follows:
 
 - I have repackaged the Pippin code by making package sub-directories. These are as follows:
@@ -15,8 +9,6 @@ In order to make this all work, there have been several updates to the Pippin co
 - I have provided two new classes to the Pippin model package. One is the `Job` class, which is used to keep track of a running job in Pippin. The other is a `Pippin` class, which creates an entire Pippin model.
 
 - I have added a new mode called IND for indirect, that is valid everywhere a direct mode is valid. In indirect mode, we use the argument to retrieve an index from memory, and then use that index to retrieve a second actual value from memory. (This allows us to do things like walk through arrays in Pippin code.)
-
-I have also created a [web page reference manual](https://www.cs.binghamton.edu/~tbartens/HowTo/PippinReference.html) for our Pippin simulation. 
 
 
 ## Repository Sub-directories
@@ -102,7 +94,7 @@ The easiest way to perform the conversion from .pasm to .pexe is to create an em
 
 ### General Assembler Method Processing
 
-See the Pippin Reference Web Page [Assembly Code](https://www.cs.binghamton.edu/~tbartens/HowTo/PippinReference.html#pasm) section for a detailed description of what is expected and what is allowed in a .pasm file. Here are many hints on how to read through that file and convert it to a Pippin Program object.
+Here are many hints on how to read through that file and convert it to a Pippin Program object.
 
  - I chose to read the `name`.pasm file using the Java Library Scanner class. You can use the `hasNextLine()` and `getNextLine()` methods in the Scanner class to read a single line out of the .pasm file at a time.
 
@@ -145,42 +137,3 @@ When you run the assemble command (especially if you run from the GUI using the 
 You might want to create a `main` method in the Assemble class so you can run your assembler directly, without having to load the GUI. The main method should pick the name of a program (a valid .pasm file) invoke the `assemble` method, and print out any errors that result.
 
 I have provided several .pasm files that you can use to test your Assembler. Make sure you can produce a valid .pexe file that can then be run in the GUI and produce correct results; or you can detect any Pippin Assembly syntax errors and report on them correctly. You might want to copy and edit the .pasm files to create new tests to cover cases I haven't covered. You might even want to create a JUnit test to test your Assembler.
-  
-## Submitting your Project
-
-Only one member of the team needs to submit. The grade will be shared by all team members.
-  
-Get your hash code with: 
-
-`git rev-parse HEAD`
-  
-or by using the Eclipse Git perspective. Copy the paste the hash code to Brightspace under proj01.
-
-## Project Part 1 Extensions
-
-I realize this is a difficult time of the semester, which lots of papers due and exams to study for and travel plans to organize. The Project Part 1 is due on Monday, December 6, 2021 at 11:59 PM. I am willing to be somewhat flexible with this deadline, but this flexibility comes with some responsibility on your part.
-
-- I will grant short extensions only when I get an email from your group. When I grant an extension, I will send an email and copy all the members of the group. If you have not received an email from me confirming your extension, you don't have an extension!
-
-- I will not grant extensions **after** the due date. If you need an extension, you must ask for it before the project is due.
-
-- Early requests for extensions represent good planning, and will be much easier to get. The closer the due date gets, the harder it will be to get an extension.
-
-- An extension on part 1 of the project *reduces* the time you have to work on part 2 of the project. There will be **no** extensions granted for part 2 of the project because part 2 will be due on the last day of exams (and I need to quickly grade exams and projects to turn in final grades.)
-
-## Grading Criteria
-
-This assignment is worth a total of 50 points. Those 50 points are broken down as follows:
-
-- +10 points for submitting anything
-- +15 points if everything in proj01.model, including Assembler.java compiles correctly.
-- + 5 points if everything in proj01.model compiles with no warning messages
-- +15 points if you correctly report all 14 errors in asmErrors.pasm (1 point per error caught plus 1 bonus points)
-- + 5 points if you do not report any extra errors in the .pasm files in proj01.pasm
-
-There will be deductions as follows:
-- -5 if there are problems with the commit hash code in Brightspace.
-- -5 if your repository is not configured correctly, as it appeared when you accepted the invitation.
-- -5 for each 24 hour period that this part of the project is late without an extension.
-
-Part 2 of the project will be worth 30 points, and the team interview will be worth 20 points. The main purpose of the team interview is to ensure that everyone on the team knows how all the code you submit works for both part 1 and part 2.
